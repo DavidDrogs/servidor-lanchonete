@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardapio Vovo Teteia Salgados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cardapio Vovô teteia Salgados</h1>
+        <p>O melhor lugar para voce matar sua fome e seu tempo</p>
+        <div id="secao-cardapio">
+            <div class="categorias">
+                <section class="categoria">
+                    <h2>Salgados</h2>
+                    <ul>
+                        <li data-nome="Coxinha" data-preco="7.00">
+                            Coxinha --- 7.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                        <li data-nome="Sfiha" data-preco="8.00">
+                            Sfiha --- 8.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                        <li data-nome="Bolinha" data-preco="7.00">
+                            Bolinha Queijo --- 7.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                    </ul>
+                </section>
+                <section class="categoria">
+                    <h2>Bebidas</h2>
+                    <ul>
+                        <li data-nome="Coca-cola" data-preco="5.00">
+                            Coca-cola --- 5.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                        <li data-nome="Fanta" data-preco="5.00">
+                            Fanta --- 5.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                        <li  data-nome="Energetico" data-preco="7.00">
+                            Energetico --- 7.00 R$
+                            <button class="add-carrinho">Adicionar</button>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div id="area-carrinho">
+                <h3>Seu Carrinho</h3>
+                <ul id="lista-carrinho"></ul>
+                <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+                <button type="button" id="btn-fechar-pedido">Fechar Pedido</button>
+            </div>
+        </div>
+        <div id="secao-pagamento">
+            <h2>Forma de Pagamento</h2>
+            <p>Total a pagar: R$ <span id="total-pagamento">0.00</span></p>
+
+            <label>
+                <input type="radio" name="pagamento" value="pix"> Pix
+            </label>
+            <label>
+                <input type="radio" name="pagamento" value="dinheiro"> Dinheiro
+            </label>
+            <label>
+                <input type="radio" name="pagamento" value="cartao"> Cartao
+            </label>
+
+            <button type="button" id="btn-confirma-pagamento">Confirma Pagamento</button>
+        </div>
+        <div id="campo-troco" style="display: none">
+            <label for="troco">Precisa de troco para quanto?</label>
+            <input type="text" id="troco" placeholder="EX: 50,00">
+        </div>
+        <a href="https://instagram/vovoteteiasalgados">Siga nossa rede social</a>
+
+
+        <div id="secao-cliente">
+            <form>
+                <label for="nome">Seu nome:</label>
+                <input type="text" id="nome" name="nome">
+                <label for="tel">Seu Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+                <label for="cpf">Seu cpf:</label>
+                <input type="cpf" id="cpf" name="cpf">
+                <button type="button" id="btn-ver-cardapio">Cardapio</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
