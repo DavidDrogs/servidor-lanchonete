@@ -101,6 +101,27 @@ btnFecharPedido.addEventListener("click", function() {
 });
 
 btnConfirmarPagamento.addEventListener("click", function() {
+    const formaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
+    const dadosPedido = {
+        nome: nome.value,
+        telefone: telefone.value,
+        itens: carrinho,
+        total: parseFloat(document.querySelector("#total-pagamento").textContent),
+        pagamento: formaPagamento
+    };
+
+    fetch("/api/pedidos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dadosPedido)
+    })
+    .then(function(resposta) {
+        return resposta.json();
+    })
+    .then(function(dados) {
+        console.log("Resposta do servidor:", dados);
+    });
+
     alert("Pedido confirmado! Obrigado");
 
     let mensagem = "Novo Pedido!\n\n";
@@ -114,7 +135,7 @@ btnConfirmarPagamento.addEventListener("click", function() {
 
     mensagem = mensagem + "\nTotal: R$ " + document.querySelector("#total-pagamento").textContent + "\n";
 
-    const formaPagamento = document.querySelector('input[name="pagamento"]:checked').value;
+   
     mensagem = mensagem + "Pagamento: " + formaPagamento;
 
     if (formaPagamento === "dinheiro") {
